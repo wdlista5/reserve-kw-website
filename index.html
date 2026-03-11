@@ -1,4 +1,4 @@
-<!-- The Reserve Key West · Website v4.4.1 · 2026 — Visual Direction B · Warm Editorial + Green -->
+<!-- The Reserve Key West · Website v4.5.2 · 2026 — Visual Direction B · Warm Editorial + Green -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,7 +52,7 @@ h4,h5{font-family:var(--ff-sans);font-weight:300;letter-spacing:0.22em;text-tran
 
 .kicker{font-family:var(--ff-sans);font-size:10px;font-weight:400;letter-spacing:0.5em;text-transform:uppercase;color:var(--amber);display:block;margin-bottom:6px}
 /* 🗝 appears after every kicker automatically */
-.kicker::after{content:'🗝';display:block;font-size:16px;margin:10px auto 14px;opacity:0.55;letter-spacing:0}
+.kicker::after{content:'🗝';display:block;font-size:25px;margin:10px auto 14px;opacity:0.55;letter-spacing:0}
 .key-divider{display:block;text-align:center;font-size:22px;margin:20px auto;opacity:0.55;letter-spacing:0.3em}
 .amber-rule{width:52px;height:1px;background:var(--amber);margin:24px auto;opacity:0.45}
 .amber-rule-left{width:52px;height:1px;background:var(--amber);margin:24px 0;opacity:0.45}
@@ -144,25 +144,31 @@ h4,h5{font-family:var(--ff-sans);font-weight:300;letter-spacing:0.22em;text-tran
    THREE DOORS — ENTRY NAV
 ══════════════════════════════════════════════ */
 /* ══════════════════════════════════════════════
-   NAV CARDS — Sip · Savor · Socialize
+   NAV CARDS — Three Full-Height Doors
 ══════════════════════════════════════════════ */
-.nav-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--rule);background:var(--parchment)}
-.nav-card{background:var(--parchment);padding:52px 40px 48px;cursor:pointer;transition:background var(--t);position:relative;overflow:hidden;border-right:1px solid var(--rule);text-decoration:none;display:block}
+.nav-cards{display:grid;grid-template-columns:repeat(3,1fr);height:calc(100vh - 72px);background:var(--parchment)}
+.nav-card{background:var(--parchment);cursor:pointer;transition:background var(--t),flex var(--t);position:relative;overflow:hidden;border-right:1px solid var(--rule);text-decoration:none;display:flex;flex-direction:column;justify-content:center;padding:52px 48px}
 .nav-card:last-child{border-right:none}
-.nav-card-bar{position:absolute;top:0;left:0;width:100%;height:3px;background:var(--forest);transform:scaleX(0);transform-origin:left;transition:transform var(--t)}
+
+/* Subtle background number watermark per panel */
+.nav-card::before{content:attr(data-num);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--ff-disp);font-size:clamp(160px,22vw,280px);font-weight:900;font-style:italic;color:rgba(44,26,14,0.03);line-height:1;pointer-events:none;user-select:none;white-space:nowrap;transition:color var(--t)}
+.nav-card:hover::before{color:rgba(30,61,31,0.04)}
+
+/* Top accent line sweeps in on hover */
+.nav-card::after{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:var(--forest);transform:scaleX(0);transform-origin:left;transition:transform 0.5s var(--ease)}
 .nav-card:hover{background:var(--cream)}
-.nav-card:hover .nav-card-bar{transform:scaleX(1)}
-.nav-card-label{font-family:var(--ff-sans);font-size:10px;font-weight:300;letter-spacing:0.48em;color:var(--amber);margin-bottom:18px;display:block;opacity:0.8;text-transform:uppercase}
-.nav-card-title{font-family:var(--ff-disp);font-size:clamp(34px,3.8vw,56px);font-weight:700;color:var(--forest);line-height:1;margin-bottom:8px}
-.nav-card-tag{font-family:var(--ff-sans);font-size:8.5px;font-weight:300;letter-spacing:0.42em;text-transform:uppercase;color:var(--amber);margin-bottom:20px;display:block;opacity:0.85}
-.nav-card-desc{font-family:var(--ff-body);font-size:14px;color:var(--brown);line-height:1.85}
-.nav-card-items{list-style:none;margin-top:20px;display:flex;flex-direction:column;gap:8px}
-.nav-card-items li{font-family:var(--ff-sans);font-size:9.5px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--forest-dk);padding-left:14px;position:relative}
+.nav-card:hover::after{transform:scaleX(1)}
+
+.nav-card-label{font-family:var(--ff-sans);font-size:9px;font-weight:300;letter-spacing:0.55em;color:var(--amber);margin-bottom:14px;display:block;opacity:0.75;text-transform:uppercase}
+.nav-card-title{font-family:var(--ff-disp);font-size:clamp(52px,6vw,90px);font-weight:700;color:var(--forest);line-height:0.95;margin-bottom:18px}
+.nav-card-tag{font-family:var(--ff-sans);font-size:8.5px;font-weight:300;letter-spacing:0.42em;text-transform:uppercase;color:var(--amber);margin-bottom:24px;display:block;opacity:0.8}
+.nav-card-items{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:32px}
+.nav-card-items li{font-family:var(--ff-sans);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--forest-dk);padding-left:16px;position:relative}
 .nav-card-items li::before{content:'–';position:absolute;left:0;color:var(--amber);font-weight:300}
-.nav-card-cta{display:block;margin-top:32px;font-family:var(--ff-sans);font-size:9px;font-weight:400;letter-spacing:0.35em;color:var(--tobacco);text-transform:uppercase;opacity:0.55;transition:opacity var(--t)}
-.nav-card:hover .nav-card-cta{opacity:0.9}
-@media(max-width:1024px){.nav-cards{grid-template-columns:1fr 1fr}}
-@media(max-width:768px){.nav-cards{grid-template-columns:1fr}.nav-card{border-right:none;border-bottom:1px solid var(--rule)}.nav-card:last-child{border-bottom:none}}
+.nav-card-cta{font-family:var(--ff-sans);font-size:9px;font-weight:400;letter-spacing:0.4em;color:var(--tobacco);text-transform:uppercase;opacity:0.45;transition:opacity var(--t)}
+.nav-card:hover .nav-card-cta{opacity:0.85}
+
+@media(max-width:768px){.nav-cards{grid-template-columns:1fr;height:auto}.nav-card{border-right:none;border-bottom:1px solid var(--rule);min-height:50vh;justify-content:flex-end}.nav-card:last-child{border-bottom:none}}
 .marquee{background:var(--espresso);padding:13px 0;overflow:hidden;white-space:nowrap;border-top:1px solid rgba(196,131,42,0.12);border-bottom:1px solid rgba(196,131,42,0.12)}
 .marquee-track{display:inline-flex;animation:marquee 40s linear infinite}
 .marquee-item{font-family:var(--ff-sans);font-size:9.5px;font-weight:300;letter-spacing:0.45em;text-transform:uppercase;color:rgba(240,232,213,0.45);padding:0 26px;display:flex;align-items:center;gap:26px}
@@ -522,14 +528,12 @@ footer{background:var(--tobacco);padding:64px 0 32px;border-top:2px solid rgba(1
   </section>
 
   <!-- THREE DOORS — PRIMARY NAVIGATION -->
-  <!-- SIP · SAVOR · SOCIALIZE NAV CARDS -->
+  <!-- SIP · SAVOR · SOCIALIZE — THREE DOORS -->
   <div class="nav-cards">
-    <a class="nav-card" onclick="showPage('sip')">
-      <div class="nav-card-bar"></div>
+    <a class="nav-card" data-num="Sip" onclick="showPage('sip')">
       <span class="nav-card-label">Bar Program</span>
       <div class="nav-card-title">Sip</div>
       <span class="nav-card-tag">Three Bars · Banking Heritage · Est. 1962</span>
-      <p class="nav-card-desc">Three bars rooted in the building's banking heritage. Each one distinct. Together, unmatched in Key West.</p>
       <ul class="nav-card-items">
         <li>The Exchange — Rotating Bar</li>
         <li>The Ledger — Main Floor Bar</li>
@@ -537,12 +541,10 @@ footer{background:var(--tobacco);padding:64px 0 32px;border-top:2px solid rgba(1
       </ul>
       <span class="nav-card-cta">Explore the Bars →</span>
     </a>
-    <a class="nav-card" onclick="showPage('savor')">
-      <div class="nav-card-bar"></div>
+    <a class="nav-card" data-num="Savor" onclick="showPage('savor')">
       <span class="nav-card-label">Four Kitchens</span>
       <div class="nav-card-title">Savor</div>
       <span class="nav-card-tag">Chef-Driven · Independent · One 1962 Landmark</span>
-      <p class="nav-card-desc">Key West's most celebrated chefs under one roof. Independent concepts, shared conviction, no reservations required.</p>
       <ul class="nav-card-items">
         <li>Thai Island / MisoHappy</li>
         <li>OnlyWood</li>
@@ -551,12 +553,10 @@ footer{background:var(--tobacco);padding:64px 0 32px;border-top:2px solid rgba(1
       </ul>
       <span class="nav-card-cta">Explore the Kitchens →</span>
     </a>
-    <a class="nav-card" onclick="showPage('socialize')">
-      <div class="nav-card-bar"></div>
+    <a class="nav-card" data-num="Socialize" onclick="showPage('socialize')">
       <span class="nav-card-label">Events &amp; Music</span>
       <div class="nav-card-title">Socialize</div>
       <span class="nav-card-tag">Live Music · Vault Sessions · Private Events</span>
-      <p class="nav-card-desc">The stage draws you in. The music holds you. The vault pulls you deeper. The most distinctive event space in the Florida Keys.</p>
       <ul class="nav-card-items">
         <li>The Main Stage — Live Music</li>
         <li>Vault Sessions — Fri &amp; Sat</li>
@@ -769,7 +769,7 @@ footer{background:var(--tobacco);padding:64px 0 32px;border-top:2px solid rgba(1
         </div>
       </div>
       <div class="footer-bottom">
-        <span class="footer-copy">© 2026 The Reserve Key West LLC · All Rights Reserved · v4.4.1</span>
+        <span class="footer-copy">© 2026 The Reserve Key West LLC · All Rights Reserved · v4.5.2</span>
         <span class="footer-legal">Est. First Federal, 1962 · 510 Southard St · Key West, FL</span>
       </div>
     </div>
@@ -928,7 +928,7 @@ footer{background:var(--tobacco);padding:64px 0 32px;border-top:2px solid rgba(1
         </div>
       </div>
       <div class="footer-bottom">
-        <span class="footer-copy">© 2026 The Reserve Key West LLC · All Rights Reserved · v4.4.1</span>
+        <span class="footer-copy">© 2026 The Reserve Key West LLC · All Rights Reserved · v4.5.2</span>
         <span class="footer-legal">Est. First Federal, 1962 · 510 Southard St · Key West, FL</span>
       </div>
     </div>
@@ -1077,7 +1077,7 @@ footer{background:var(--tobacco);padding:64px 0 32px;border-top:2px solid rgba(1
         </div>
       </div>
       <div class="footer-bottom">
-        <span class="footer-copy">© 2026 The Reserve Key West LLC · All Rights Reserved · v4.4.1</span>
+        <span class="footer-copy">© 2026 The Reserve Key West LLC · All Rights Reserved · v4.5.2</span>
         <span class="footer-legal">Est. First Federal, 1962 · 510 Southard St · Key West, FL</span>
       </div>
     </div>
@@ -1204,7 +1204,7 @@ footer{background:var(--tobacco);padding:64px 0 32px;border-top:2px solid rgba(1
         </div>
       </div>
       <div class="footer-bottom">
-        <span class="footer-copy">© 2026 The Reserve Key West LLC · All Rights Reserved · v4.4.1</span>
+        <span class="footer-copy">© 2026 The Reserve Key West LLC · All Rights Reserved · v4.5.2</span>
         <span class="footer-legal">Est. First Federal, 1962 · 510 Southard St · Key West, FL</span>
       </div>
     </div>
@@ -1355,7 +1355,7 @@ footer{background:var(--tobacco);padding:64px 0 32px;border-top:2px solid rgba(1
         </div>
       </div>
       <div class="footer-bottom">
-        <span class="footer-copy">© 2026 The Reserve Key West LLC · All Rights Reserved · v4.4.1</span>
+        <span class="footer-copy">© 2026 The Reserve Key West LLC · All Rights Reserved · v4.5.2</span>
         <span class="footer-legal">Est. First Federal, 1962 · 510 Southard St · Key West, FL</span>
       </div>
     </div>
