@@ -1,4 +1,4 @@
-<!-- The Reserve Key West · Website v4.5.2 · 2026 — Visual Direction B · Warm Editorial + Green -->
+<!-- The Reserve Key West · Website v4.5.3 · 2026 — Visual Direction B · Warm Editorial + Green -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,7 +52,7 @@ h4,h5{font-family:var(--ff-sans);font-weight:300;letter-spacing:0.22em;text-tran
 
 .kicker{font-family:var(--ff-sans);font-size:10px;font-weight:400;letter-spacing:0.5em;text-transform:uppercase;color:var(--amber);display:block;margin-bottom:6px}
 /* 🗝 appears after every kicker automatically */
-.kicker::after{content:'🗝';display:block;font-size:25px;margin:10px auto 14px;opacity:0.55;letter-spacing:0}
+.kicker::after{content:'🗝';display:block;font-size:25px;font-style:normal;margin:10px auto 14px;opacity:0.55;letter-spacing:0}
 .key-divider{display:block;text-align:center;font-size:22px;margin:20px auto;opacity:0.55;letter-spacing:0.3em}
 .amber-rule{width:52px;height:1px;background:var(--amber);margin:24px auto;opacity:0.45}
 .amber-rule-left{width:52px;height:1px;background:var(--amber);margin:24px 0;opacity:0.45}
@@ -168,7 +168,16 @@ h4,h5{font-family:var(--ff-sans);font-weight:300;letter-spacing:0.22em;text-tran
 .nav-card-cta{font-family:var(--ff-sans);font-size:9px;font-weight:400;letter-spacing:0.4em;color:var(--tobacco);text-transform:uppercase;opacity:0.45;transition:opacity var(--t)}
 .nav-card:hover .nav-card-cta{opacity:0.85}
 
-@media(max-width:768px){.nav-cards{grid-template-columns:1fr;height:auto}.nav-card{border-right:none;border-bottom:1px solid var(--rule);min-height:50vh;justify-content:flex-end}.nav-card:last-child{border-bottom:none}}
+@media(max-width:768px){
+  .nav-cards{grid-template-columns:repeat(3,1fr);height:calc(100vh - 60px)}
+  .nav-card{padding:24px 14px;border-right:1px solid var(--rule);border-bottom:none}
+  .nav-card:last-child{border-right:none}
+  .nav-card-label{font-size:7px;letter-spacing:0.3em;margin-bottom:10px}
+  .nav-card-title{font-size:clamp(28px,6vw,42px);margin-bottom:10px}
+  .nav-card-tag{font-size:6.5px;letter-spacing:0.25em;margin-bottom:14px}
+  .nav-card-items li{font-size:7.5px;letter-spacing:0.15em}
+  .nav-card-cta{font-size:7px;letter-spacing:0.25em;margin-top:18px}
+}
 .marquee{background:var(--espresso);padding:13px 0;overflow:hidden;white-space:nowrap;border-top:1px solid rgba(196,131,42,0.12);border-bottom:1px solid rgba(196,131,42,0.12)}
 .marquee-track{display:inline-flex;animation:marquee 40s linear infinite}
 .marquee-item{font-family:var(--ff-sans);font-size:9.5px;font-weight:300;letter-spacing:0.45em;text-transform:uppercase;color:rgba(240,232,213,0.45);padding:0 26px;display:flex;align-items:center;gap:26px}
@@ -769,7 +778,7 @@ footer{background:var(--tobacco);padding:64px 0 32px;border-top:2px solid rgba(1
         </div>
       </div>
       <div class="footer-bottom">
-        <span class="footer-copy">© 2026 The Reserve Key West LLC · All Rights Reserved · v4.5.2</span>
+        <span class="footer-copy">© 2026 The Reserve Key West LLC · All Rights Reserved · v4.5.3</span>
         <span class="footer-legal">Est. First Federal, 1962 · 510 Southard St · Key West, FL</span>
       </div>
     </div>
@@ -928,7 +937,7 @@ footer{background:var(--tobacco);padding:64px 0 32px;border-top:2px solid rgba(1
         </div>
       </div>
       <div class="footer-bottom">
-        <span class="footer-copy">© 2026 The Reserve Key West LLC · All Rights Reserved · v4.5.2</span>
+        <span class="footer-copy">© 2026 The Reserve Key West LLC · All Rights Reserved · v4.5.3</span>
         <span class="footer-legal">Est. First Federal, 1962 · 510 Southard St · Key West, FL</span>
       </div>
     </div>
@@ -1077,7 +1086,7 @@ footer{background:var(--tobacco);padding:64px 0 32px;border-top:2px solid rgba(1
         </div>
       </div>
       <div class="footer-bottom">
-        <span class="footer-copy">© 2026 The Reserve Key West LLC · All Rights Reserved · v4.5.2</span>
+        <span class="footer-copy">© 2026 The Reserve Key West LLC · All Rights Reserved · v4.5.3</span>
         <span class="footer-legal">Est. First Federal, 1962 · 510 Southard St · Key West, FL</span>
       </div>
     </div>
@@ -1204,7 +1213,7 @@ footer{background:var(--tobacco);padding:64px 0 32px;border-top:2px solid rgba(1
         </div>
       </div>
       <div class="footer-bottom">
-        <span class="footer-copy">© 2026 The Reserve Key West LLC · All Rights Reserved · v4.5.2</span>
+        <span class="footer-copy">© 2026 The Reserve Key West LLC · All Rights Reserved · v4.5.3</span>
         <span class="footer-legal">Est. First Federal, 1962 · 510 Southard St · Key West, FL</span>
       </div>
     </div>
@@ -1355,7 +1364,7 @@ footer{background:var(--tobacco);padding:64px 0 32px;border-top:2px solid rgba(1
         </div>
       </div>
       <div class="footer-bottom">
-        <span class="footer-copy">© 2026 The Reserve Key West LLC · All Rights Reserved · v4.5.2</span>
+        <span class="footer-copy">© 2026 The Reserve Key West LLC · All Rights Reserved · v4.5.3</span>
         <span class="footer-legal">Est. First Federal, 1962 · 510 Southard St · Key West, FL</span>
       </div>
     </div>
