@@ -1,9 +1,9 @@
-<!-- The Reserve Key West · Website v4.5.3 · 2026 — Visual Direction B · Warm Editorial + Green -->
+<!-- The Reserve Key West · Website v4.5.4 · 2026 — Visual Direction B · Warm Editorial + Green -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="version" content="4.0.0">
+<meta name="version" content="4.5.4">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Reserve Key West · A Culinary Landmark · Est. 1962</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,17 +41,12 @@
 html{scroll-behavior:smooth;font-size:16px}
 body{background:var(--parchment);color:var(--tobacco);font-family:var(--ff-body);font-weight:400;overflow-x:hidden}
 
-/* Subtle paper grain */
 body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.018'/%3E%3C/svg%3E");pointer-events:none;z-index:9998;opacity:1}
 
-/* ══════════════════════════════════════════════
-   TYPOGRAPHY
-══════════════════════════════════════════════ */
 h1,h2,h3{font-family:var(--ff-disp);font-weight:700;line-height:1.1;color:var(--tobacco)}
 h4,h5{font-family:var(--ff-sans);font-weight:300;letter-spacing:0.22em;text-transform:uppercase;font-size:11px}
 
 .kicker{font-family:var(--ff-sans);font-size:10px;font-weight:400;letter-spacing:0.5em;text-transform:uppercase;color:var(--amber);display:block;margin-bottom:6px}
-/* 🗝 appears after every kicker automatically */
 .kicker::after{content:'🗝';display:block;font-size:25px;font-style:normal;margin:10px auto 14px;opacity:0.55;letter-spacing:0}
 .key-divider{display:block;text-align:center;font-size:22px;margin:20px auto;opacity:0.55;letter-spacing:0.3em}
 .amber-rule{width:52px;height:1px;background:var(--amber);margin:24px auto;opacity:0.45}
@@ -59,9 +54,6 @@ h4,h5{font-family:var(--ff-sans);font-weight:300;letter-spacing:0.22em;text-tran
 .page{display:none}
 .page.active{display:block}
 
-/* ══════════════════════════════════════════════
-   LAYOUT
-══════════════════════════════════════════════ */
 .wrap{max-width:1140px;margin:0 auto;padding:0 48px}
 .wrap-narrow{max-width:820px;margin:0 auto;padding:0 48px}
 .sec{padding:96px 0}
@@ -71,61 +63,41 @@ h4,h5{font-family:var(--ff-sans);font-weight:300;letter-spacing:0.22em;text-tran
    NAV
 ══════════════════════════════════════════════ */
 #nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 48px;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(240,232,213,0.98);box-shadow:0 1px 0 var(--rule);backdrop-filter:blur(8px)}
-
 .nav-logo{display:flex;align-items:center;gap:14px;cursor:pointer;flex:1;text-decoration:none}
 .nav-wordmark{display:flex;flex-direction:column;line-height:1}
 .nav-wm-the{font-family:var(--ff-disp);font-size:9px;font-style:italic;color:var(--amber);letter-spacing:0.15em;margin-bottom:1px}
 .nav-wm-name{font-family:var(--ff-disp);font-size:16px;font-weight:700;color:var(--tobacco);letter-spacing:0.05em}
 .nav-wm-sub{font-family:var(--ff-sans);font-size:7px;font-weight:300;letter-spacing:0.55em;text-transform:uppercase;color:var(--muted);margin-top:2px}
 .nav-key{font-size:16px;opacity:0.6}
-
-.nav-center{display:flex;align-items:center;gap:6px;flex:1;justify-content:center}
-.nav-center a{font-family:var(--ff-sans);font-size:11px;font-weight:400;letter-spacing:0.3em;text-transform:uppercase;color:var(--tobacco);cursor:pointer;text-decoration:none;padding:6px 14px;transition:color var(--t);position:relative}
-.nav-center a::after{content:'';position:absolute;bottom:0;left:14px;right:14px;height:1px;background:var(--amber);transform:scaleX(0);transition:transform var(--t);transform-origin:center}
-.nav-center a:hover{color:var(--amber)}
-.nav-center a:hover::after,.nav-center a.active::after{transform:scaleX(1)}
-.nav-center a.active{color:var(--amber)}
-.nav-sep{color:var(--amber);opacity:0.4;font-size:10px}
-
+.nav-center{display:none}
+.nav-story{display:none}
 .nav-right{display:flex;align-items:center;gap:24px;flex:1;justify-content:flex-end}
-.nav-story{font-family:var(--ff-sans);font-size:10px;font-weight:300;letter-spacing:0.35em;text-transform:uppercase;color:var(--brown);cursor:pointer;text-decoration:none;transition:color var(--t)}
-.nav-story:hover,.nav-story.active{color:var(--amber)}
-
-.nav-ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.nav-ham{display:flex;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
 .nav-ham span{display:block;width:22px;height:1px;background:var(--tobacco);transition:var(--t)}
-
-.mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;background:var(--parchment);padding:32px 40px;flex-direction:column;gap:24px;border-bottom:1px solid var(--rule);z-index:999;box-shadow:0 8px 24px rgba(44,26,14,0.08)}
+.mobile-menu{display:none;position:fixed;top:72px;right:48px;left:auto;background:var(--parchment);padding:20px 32px;flex-direction:column;gap:18px;border:1px solid var(--rule);z-index:999;box-shadow:0 8px 24px rgba(44,26,14,0.10);min-width:200px}
 .mobile-menu.open{display:flex}
-.mobile-menu a{font-family:var(--ff-sans);font-size:13px;letter-spacing:0.35em;color:var(--tobacco);text-decoration:none;text-transform:uppercase;cursor:pointer;transition:color var(--t)}
+.mobile-menu a{font-family:var(--ff-sans);font-size:11px;letter-spacing:0.35em;color:var(--tobacco);text-decoration:none;text-transform:uppercase;cursor:pointer;transition:color var(--t)}
 .mobile-menu a:hover{color:var(--amber)}
 
 /* ══════════════════════════════════════════════
    HERO
 ══════════════════════════════════════════════ */
 .hero{min-height:100vh;background:var(--tobacco);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 48px 100px;position:relative;overflow:hidden}
-
-/* Faint 1962 watermark */
 .hero-yr-bg{position:absolute;font-family:var(--ff-disp);font-size:clamp(120px,28vw,420px);font-weight:900;color:rgba(240,232,213,0.025);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;user-select:none;letter-spacing:0.04em;font-style:italic}
-
-/* Spinning ring */
 .hero-ring-wrap{position:relative;width:clamp(210px,22vw,270px);height:clamp(210px,22vw,270px);margin-bottom:40px}
 .hero-ring-wrap svg{width:100%;height:100%}
 @keyframes slowspin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 .ring-spin{transform-origin:100px 100px;animation:slowspin 36s linear infinite}
-
-/* Static center text over the ring */
 .hero-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;pointer-events:none}
 .hero-center-the{font-family:var(--ff-disp);font-size:11px;font-weight:400;font-style:italic;color:var(--amber);letter-spacing:0.2em;opacity:0.95}
 .hero-center-name{font-family:var(--ff-disp);font-size:16px;font-weight:700;color:var(--parchment);letter-spacing:0.32em;text-transform:uppercase;opacity:0.97}
 .hero-center-sub{font-family:var(--ff-sans);font-size:7px;font-weight:300;letter-spacing:0.52em;text-transform:uppercase;color:var(--amber);opacity:0.72}
-
 .hero-eyebrow{font-family:var(--ff-sans);font-size:10px;font-weight:300;letter-spacing:0.55em;text-transform:uppercase;color:var(--amber);margin-bottom:14px;opacity:0.85}
 .hero-title{font-family:var(--ff-disp);font-size:clamp(52px,9vw,130px);font-weight:900;color:var(--parchment);line-height:0.95;margin-bottom:0px;letter-spacing:0.02em;font-style:normal}
 .hero-sub{font-family:var(--ff-sans);font-size:clamp(12px,1.8vw,18px);font-weight:200;letter-spacing:0.65em;color:rgba(240,232,213,0.55);margin-bottom:32px;text-transform:uppercase}
 .hero-vline{width:1px;height:52px;background:linear-gradient(to bottom,var(--amber),transparent);margin:0 auto 28px;opacity:0.5}
 .hero-tagline{font-family:var(--ff-disp);font-size:clamp(16px,2vw,24px);font-weight:400;font-style:italic;color:rgba(240,232,213,0.8);margin-bottom:6px}
 .hero-guest{font-family:var(--ff-sans);font-size:10px;font-weight:300;letter-spacing:0.5em;text-transform:uppercase;color:var(--amber);margin-bottom:48px;opacity:0.8}
-
 .hero-ctas{display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center}
 .hero-btn{font-family:var(--ff-sans);font-size:10px;font-weight:400;letter-spacing:0.35em;text-transform:uppercase;padding:13px 32px;border:1px solid;cursor:pointer;text-decoration:none;transition:all var(--t);display:inline-block}
 .hero-btn-sip{color:rgba(240,232,213,0.75);border-color:rgba(240,232,213,0.25)}
@@ -134,33 +106,25 @@ h4,h5{font-family:var(--ff-sans);font-weight:300;letter-spacing:0.22em;text-tran
 .hero-btn-savor:hover{background:var(--amber-lt);border-color:var(--amber-lt)}
 .hero-btn-social{color:rgba(240,232,213,0.75);border-color:rgba(240,232,213,0.25)}
 .hero-btn-social:hover{color:var(--parchment);border-color:rgba(240,232,213,0.6)}
-
 .hero-scroll{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px}
 .hero-scroll span{font-family:var(--ff-sans);font-size:7.5px;font-weight:300;letter-spacing:0.5em;color:rgba(240,232,213,0.35);text-transform:uppercase}
 .hero-scroll-line{width:1px;height:36px;background:linear-gradient(to bottom,var(--amber),transparent);animation:pulse 2.4s ease-in-out infinite;opacity:0.5}
 @keyframes pulse{0%,100%{opacity:0.3;transform:scaleY(1)}50%{opacity:0.7;transform:scaleY(1.15)}}
 
 /* ══════════════════════════════════════════════
-   THREE DOORS — ENTRY NAV
-══════════════════════════════════════════════ */
-/* ══════════════════════════════════════════════
    NAV CARDS — Three Full-Height Doors
 ══════════════════════════════════════════════ */
 .nav-cards{display:grid;grid-template-columns:repeat(3,1fr);height:calc(100vh - 72px);background:var(--parchment)}
 .nav-card{background:var(--parchment);cursor:pointer;transition:background var(--t),flex var(--t);position:relative;overflow:hidden;border-right:1px solid var(--rule);text-decoration:none;display:flex;flex-direction:column;justify-content:center;padding:52px 48px}
 .nav-card:last-child{border-right:none}
-
-/* Subtle background number watermark per panel */
 .nav-card::before{content:attr(data-num);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--ff-disp);font-size:clamp(160px,22vw,280px);font-weight:900;font-style:italic;color:rgba(44,26,14,0.03);line-height:1;pointer-events:none;user-select:none;white-space:nowrap;transition:color var(--t)}
 .nav-card:hover::before{color:rgba(30,61,31,0.04)}
-
-/* Top accent line sweeps in on hover */
 .nav-card::after{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:var(--forest);transform:scaleX(0);transform-origin:left;transition:transform 0.5s var(--ease)}
 .nav-card:hover{background:var(--cream)}
 .nav-card:hover::after{transform:scaleX(1)}
-
 .nav-card-label{font-family:var(--ff-sans);font-size:9px;font-weight:300;letter-spacing:0.55em;color:var(--amber);margin-bottom:14px;display:block;opacity:0.75;text-transform:uppercase}
-.nav-card-title{font-family:var(--ff-disp);font-size:clamp(52px,6vw,90px);font-weight:700;color:var(--forest);line-height:0.95;margin-bottom:18px}
+.nav-card-title{font-family:var(--ff-disp);font-size:clamp(40px,5vw,90px);font-weight:700;color:var(--forest);line-height:1;margin-bottom:18px;display:block;width:fit-content;max-width:100%;border:1.5px solid var(--forest);padding:14px 36px;border-radius:999px;background:rgba(30,61,31,0.05);box-shadow:0 4px 24px rgba(30,61,31,0.08);transition:background var(--t),color var(--t),box-shadow var(--t)}
+.nav-card:hover .nav-card-title{background:var(--forest);color:var(--cream);box-shadow:0 6px 32px rgba(30,61,31,0.18)}
 .nav-card-tag{font-family:var(--ff-sans);font-size:8.5px;font-weight:300;letter-spacing:0.42em;text-transform:uppercase;color:var(--amber);margin-bottom:24px;display:block;opacity:0.8}
 .nav-card-items{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:32px}
 .nav-card-items li{font-family:var(--ff-sans);font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--forest-dk);padding-left:16px;position:relative}
@@ -168,37 +132,52 @@ h4,h5{font-family:var(--ff-sans);font-weight:300;letter-spacing:0.22em;text-tran
 .nav-card-cta{font-family:var(--ff-sans);font-size:9px;font-weight:400;letter-spacing:0.4em;color:var(--tobacco);text-transform:uppercase;opacity:0.45;transition:opacity var(--t)}
 .nav-card:hover .nav-card-cta{opacity:0.85}
 
+/* ── MOBILE FIX v4.5.4: stack cards vertically on iPhone ── */
 @media(max-width:768px){
-  .nav-cards{grid-template-columns:repeat(3,1fr);height:calc(100vh - 60px)}
-  .nav-card{padding:24px 14px;border-right:1px solid var(--rule);border-bottom:none}
-  .nav-card:last-child{border-right:none}
-  .nav-card-label{font-size:7px;letter-spacing:0.3em;margin-bottom:10px}
-  .nav-card-title{font-size:clamp(28px,6vw,42px);margin-bottom:10px}
-  .nav-card-tag{font-size:6.5px;letter-spacing:0.25em;margin-bottom:14px}
-  .nav-card-items li{font-size:7.5px;letter-spacing:0.15em}
-  .nav-card-cta{font-size:7px;letter-spacing:0.25em;margin-top:18px}
+  .nav-cards{grid-template-columns:1fr;height:auto}
+  .nav-card{padding:36px 28px;border-right:none;border-bottom:1px solid var(--rule)}
+  .nav-card:last-child{border-bottom:none}
+  .nav-card-label{font-size:8px;letter-spacing:0.35em;margin-bottom:10px}
+  .nav-card-title{font-size:clamp(36px,11vw,56px);margin-bottom:10px;padding:12px 28px;border-radius:999px}
+  .nav-card-tag{font-size:8px;letter-spacing:0.28em;margin-bottom:16px}
+  .nav-card-items li{font-size:9px;letter-spacing:0.18em}
+  .nav-card-cta{font-size:8px;letter-spacing:0.3em;margin-top:20px}
 }
+
 .marquee{background:var(--espresso);padding:13px 0;overflow:hidden;white-space:nowrap;border-top:1px solid rgba(196,131,42,0.12);border-bottom:1px solid rgba(196,131,42,0.12)}
 .marquee-track{display:inline-flex;animation:marquee 40s linear infinite}
 .marquee-item{font-family:var(--ff-sans);font-size:9.5px;font-weight:300;letter-spacing:0.45em;text-transform:uppercase;color:rgba(240,232,213,0.45);padding:0 26px;display:flex;align-items:center;gap:26px}
 .marquee-item::after{content:'🗝';font-size:11px;opacity:0.3}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-/* ══════════════════════════════════════════════
-   PHILOSOPHY STRIP
-══════════════════════════════════════════════ */
 .philosophy{background:var(--cream);padding:80px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
 .philosophy blockquote{font-family:var(--ff-disp);font-size:clamp(20px,3vw,32px);font-style:italic;color:var(--tobacco);text-align:center;max-width:800px;margin:0 auto;line-height:1.6;font-weight:400}
 .philosophy cite{display:block;margin-top:22px;font-family:var(--ff-sans);font-size:9px;font-weight:300;letter-spacing:0.45em;color:var(--amber);text-transform:uppercase;font-style:normal;text-align:center;opacity:0.7}
 
-/* ══════════════════════════════════════════════
-   CHEF CARDS (HOME)
-══════════════════════════════════════════════ */
-.chefs-section{background:var(--parchment)}
+.kitchen-cols{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--rule);background:var(--parchment)}
+.kitchen-col{padding:56px 40px;border-right:1px solid var(--rule);display:flex;flex-direction:column;gap:0}
+.kitchen-col:last-child{border-right:none}
+.kitchen-col-num{font-family:var(--ff-sans);font-size:9px;letter-spacing:0.45em;text-transform:uppercase;color:var(--amber);margin-bottom:18px;display:block}
+.kitchen-col-name{font-family:var(--ff-disp);font-size:clamp(24px,2.2vw,36px);font-weight:700;color:var(--tobacco);line-height:1.1;margin:0 0 14px}
+.kitchen-col-tag{font-family:var(--ff-sans);font-size:8px;letter-spacing:0.35em;text-transform:uppercase;color:var(--brown);opacity:0.7;margin-bottom:20px;display:block}
+.kitchen-col-desc{font-family:var(--ff-body);font-size:15px;line-height:1.7;color:var(--tobacco);flex:1;margin-bottom:24px}
+.kitchen-col-born{display:inline-block;border:1px solid var(--amber);color:var(--amber);font-family:var(--ff-sans);font-size:8px;letter-spacing:0.3em;text-transform:uppercase;padding:6px 14px;margin-bottom:20px}
+.kitchen-col-cta{font-family:var(--ff-sans);font-size:9px;letter-spacing:0.35em;text-transform:uppercase;color:var(--brown);text-decoration:none;cursor:pointer;transition:color var(--t);margin-top:auto}
+.kitchen-col-cta:hover{color:var(--amber)}
+@media(max-width:900px){
+  .kitchen-cols{grid-template-columns:repeat(2,1fr)}
+  .kitchen-col:nth-child(2){border-right:none}
+  .kitchen-col:nth-child(3){border-top:1px solid var(--rule)}
+  .kitchen-col:nth-child(4){border-top:1px solid var(--rule);border-right:none}
+}
+@media(max-width:560px){
+  .kitchen-cols{grid-template-columns:1fr}
+  .kitchen-col{border-right:none;border-top:1px solid var(--rule)}
+  .kitchen-col:first-child{border-top:none}
+}
 .sec-hdr{text-align:center;margin-bottom:64px}
 .sec-hdr h2{font-size:clamp(34px,4.5vw,60px)}
 .sec-hdr p{font-family:var(--ff-body);font-size:16px;font-style:italic;color:var(--brown);margin-top:14px;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.7}
-
 .chefs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--rule)}
 .chef-card{background:var(--parchment);padding:48px 36px;cursor:pointer;transition:background var(--t);position:relative;overflow:hidden;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
 .chef-card:last-child{border-right:none}
@@ -212,9 +191,6 @@ h4,h5{font-family:var(--ff-sans);font-weight:300;letter-spacing:0.22em;text-tran
 .chef-card-cta{display:block;margin-top:28px;font-family:var(--ff-sans);font-size:9px;font-weight:400;letter-spacing:0.35em;color:var(--tobacco);text-transform:uppercase;opacity:0.6}
 .born-here{display:inline-block;margin-top:12px;font-family:var(--ff-sans);font-size:7.5px;font-weight:400;letter-spacing:0.3em;color:var(--amber);border:1px solid rgba(196,131,42,0.4);padding:4px 10px;text-transform:uppercase}
 
-/* ══════════════════════════════════════════════
-   BUILDING STRIP
-══════════════════════════════════════════════ */
 .building{background:var(--espresso);padding:100px 0;position:relative;overflow:hidden}
 .building::before{content:'1962';position:absolute;right:-2vw;top:50%;transform:translateY(-50%);font-family:var(--ff-disp);font-size:clamp(140px,22vw,320px);font-weight:900;font-style:italic;color:rgba(240,232,213,0.025);line-height:1;pointer-events:none;user-select:none}
 .building-inner{display:grid;grid-template-columns:1fr 1.6fr;gap:80px;align-items:center}
@@ -228,9 +204,6 @@ h4,h5{font-family:var(--ff-sans);font-weight:300;letter-spacing:0.22em;text-tran
 .building-cta{display:inline-block;margin-top:32px;font-family:var(--ff-sans);font-size:9.5px;font-weight:400;letter-spacing:0.4em;text-transform:uppercase;color:var(--parchment);border-bottom:1px solid rgba(240,232,213,0.3);padding-bottom:4px;cursor:pointer;text-decoration:none;transition:color var(--t),border-color var(--t)}
 .building-cta:hover{color:var(--amber);border-color:var(--amber)}
 
-/* ══════════════════════════════════════════════
-   BARS PREVIEW
-══════════════════════════════════════════════ */
 .bars-section{background:var(--cream);padding:96px 0}
 .bars-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--rule)}
 .bar-card{background:var(--cream);padding:52px 40px;cursor:pointer;transition:background var(--t);border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
@@ -243,9 +216,6 @@ h4,h5{font-family:var(--ff-sans);font-weight:300;letter-spacing:0.22em;text-tran
 .bar-card-rule{width:40px;height:1px;background:var(--amber);opacity:0.35;margin:20px 0}
 .bar-card-bank{font-family:var(--ff-sans);font-size:8.5px;font-weight:300;letter-spacing:0.3em;color:var(--muted);text-transform:uppercase}
 
-/* ══════════════════════════════════════════════
-   VAULT TEASER
-══════════════════════════════════════════════ */
 .vault-tease{background:var(--espresso);padding:100px 0;text-align:center;position:relative;overflow:hidden}
 .vault-tease-bg-key{position:absolute;font-size:clamp(200px,40vw,500px);top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.02;pointer-events:none;user-select:none}
 .vault-tease-inner{position:relative;z-index:1}
@@ -257,9 +227,6 @@ h4,h5{font-family:var(--ff-sans);font-weight:300;letter-spacing:0.22em;text-tran
 .vault-btn{display:inline-block;font-family:var(--ff-sans);font-size:10px;font-weight:400;letter-spacing:0.4em;text-transform:uppercase;padding:13px 38px;border:1px solid rgba(240,232,213,0.2);color:var(--parchment);cursor:pointer;text-decoration:none;transition:all var(--t)}
 .vault-btn:hover{border-color:var(--amber);color:var(--amber)}
 
-/* ══════════════════════════════════════════════
-   FOOTER
-══════════════════════════════════════════════ */
 footer{background:var(--tobacco);padding:64px 0 32px;border-top:2px solid rgba(196,131,42,0.15)}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(240,232,213,0.07)}
 .footer-brand-nm{font-family:var(--ff-disp);font-size:20px;font-weight:700;font-style:italic;color:var(--parchment);display:block;letter-spacing:0.03em;display:flex;align-items:center;gap:8px}
@@ -274,51 +241,36 @@ footer{background:var(--tobacco);padding:64px 0 32px;border-top:2px solid rgba(1
 .footer-copy{font-family:var(--ff-sans);font-size:9.5px;font-weight:300;color:rgba(240,232,213,0.3);letter-spacing:0.04em}
 .footer-legal{font-family:var(--ff-sans);font-size:8px;font-weight:300;letter-spacing:0.3em;color:rgba(240,232,213,0.2);text-transform:uppercase}
 
-/* ══════════════════════════════════════════════
-   PAGE HEADER (inner pages)
-══════════════════════════════════════════════ */
 .pg-header{background:var(--tobacco);padding:140px 0 80px;text-align:center;position:relative;overflow:hidden}
 .pg-header-ghost{position:absolute;font-family:var(--ff-disp);font-size:clamp(80px,20vw,280px);font-weight:900;font-style:italic;color:rgba(240,232,213,0.03);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;letter-spacing:0.06em;pointer-events:none}
 .pg-header .kicker{color:rgba(196,131,42,0.7)}
 .pg-header h1{color:var(--parchment);font-size:clamp(44px,7vw,90px);font-style:italic}
 .pg-header p{font-family:var(--ff-body);font-size:16px;font-style:italic;color:rgba(240,232,213,0.6);margin-top:18px;max-width:580px;margin-left:auto;margin-right:auto;line-height:1.7}
 
-/* ══════════════════════════════════════════════
-   SAVOR — KITCHENS
-══════════════════════════════════════════════ */
 .kitchen-intro{background:var(--parchment);padding:72px 0;text-align:center;border-bottom:1px solid var(--rule)}
-.kitchen-intro h2{font-size:clamp(28px,3.8vw,50px)}
+.kitchen-intro h2{font-size:clamp(28px,3.8vw,50px);color:var(--forest)}
 .kitchen-intro p{font-family:var(--ff-body);font-size:16px;font-style:italic;color:var(--brown);max-width:660px;margin:18px auto 0;line-height:1.75}
-
 .kitchen-profile{padding:88px 0;border-bottom:1px solid var(--rule)}
 .kitchen-profile:nth-child(even){background:var(--cream)}
 .kitchen-inner{display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:start}
 .kitchen-profile:nth-child(even) .kitchen-inner{direction:rtl}
-.kitchen-profile:nth-child(even) .kitchen-content,
-.kitchen-profile:nth-child(even) .kitchen-vis{direction:ltr}
-
+.kitchen-profile:nth-child(even) .kitchen-content,.kitchen-profile:nth-child(even) .kitchen-vis{direction:ltr}
 .kitchen-num{font-family:var(--ff-disp);font-size:80px;font-weight:900;font-style:italic;color:rgba(44,26,14,0.055);line-height:1;margin-bottom:-16px}
 .kitchen-name{font-family:var(--ff-disp);font-size:clamp(36px,4.2vw,58px);color:var(--tobacco);font-weight:700;margin-bottom:4px;line-height:1.05}
 .kitchen-tag{font-family:var(--ff-sans);font-size:9px;font-weight:300;letter-spacing:0.45em;text-transform:uppercase;color:var(--amber);display:block;margin-bottom:24px;opacity:0.85}
 .kitchen-story{font-family:var(--ff-body);font-size:15px;color:var(--brown);line-height:1.95;margin-bottom:22px}
 .kitchen-story strong{font-weight:600;color:var(--tobacco)}
-
 .kitchen-sig{background:var(--tobacco);padding:26px 32px;margin-top:8px;position:relative}
 .kitchen-sig::before{content:'🗝';position:absolute;top:20px;right:22px;font-size:18px;opacity:0.2}
 .kitchen-sig-lbl{font-family:var(--ff-sans);font-size:8px;font-weight:300;letter-spacing:0.45em;text-transform:uppercase;color:rgba(196,131,42,0.7);margin-bottom:10px;display:block}
 .kitchen-sig-text{font-family:var(--ff-body);font-size:15px;font-style:italic;color:rgba(240,232,213,0.8);line-height:1.65}
-
 .kitchen-vis{background:var(--espresso);aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden}
 .kitchen-vis::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 40px,rgba(196,131,42,0.02) 40px,rgba(196,131,42,0.02) 41px)}
 .kitchen-vis-text{font-family:var(--ff-disp);font-size:clamp(28px,4.5vw,60px);font-weight:900;font-style:italic;color:rgba(240,232,213,0.08);text-align:center;letter-spacing:0.04em;padding:0 20px;line-height:1.1}
 .kitchen-vis-sub{font-family:var(--ff-sans);font-size:9px;font-weight:300;letter-spacing:0.42em;text-transform:uppercase;color:rgba(240,232,213,0.15);margin-top:12px}
-
 .bocado-flag{display:inline-flex;align-items:center;gap:8px;background:rgba(196,131,42,0.08);border:1px solid rgba(196,131,42,0.25);padding:7px 14px;margin-bottom:18px}
 .bocado-flag span{font-family:var(--ff-sans);font-size:8px;font-weight:300;letter-spacing:0.32em;color:var(--amber);text-transform:uppercase}
 
-/* ══════════════════════════════════════════════
-   SIP — BARS
-══════════════════════════════════════════════ */
 .bar-section{padding:88px 0;border-bottom:1px solid var(--rule)}
 .bar-section-exchange{background:var(--parchment)}
 .bar-section-ledger{background:var(--cream)}
@@ -326,7 +278,6 @@ footer{background:var(--tobacco);padding:64px 0 32px;border-top:2px solid rgba(1
 .bar-inner{display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:center}
 .bar-ledger .bar-inner{direction:rtl}
 .bar-ledger .bar-content,.bar-ledger .bar-vis{direction:ltr}
-
 .bar-name{font-family:var(--ff-disp);font-size:clamp(44px,5.8vw,82px);font-weight:700;font-style:italic;color:var(--tobacco);margin-bottom:6px;line-height:0.95}
 .bar-section-vault .bar-name{color:var(--parchment)}
 .bar-type{font-family:var(--ff-sans);font-size:9.5px;font-weight:300;letter-spacing:0.5em;text-transform:uppercase;color:var(--amber);margin-bottom:28px;display:block;opacity:0.85}
@@ -334,40 +285,31 @@ footer{background:var(--tobacco);padding:64px 0 32px;border-top:2px solid rgba(1
 .bar-section-vault .bar-desc{color:rgba(240,232,213,0.72)}
 .bar-heritage{font-family:var(--ff-disp);font-size:15px;font-style:italic;color:var(--muted);border-left:2px solid rgba(196,131,42,0.35);padding-left:18px;margin-top:24px;line-height:1.65}
 .bar-section-vault .bar-heritage{color:rgba(240,232,213,0.5)}
-
 .bar-details{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:30px}
 .bar-detail label{font-family:var(--ff-sans);font-size:8px;font-weight:300;letter-spacing:0.4em;text-transform:uppercase;color:var(--amber);margin-bottom:4px;display:block;opacity:0.8}
 .bar-detail p{font-family:var(--ff-body);font-size:12.5px;color:var(--brown)}
 .bar-section-vault .bar-detail p{color:rgba(240,232,213,0.65)}
-
 .bar-vis{aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
 .bar-vis-exchange{background:linear-gradient(160deg,var(--brown) 0%,var(--espresso) 100%)}
 .bar-vis-ledger{background:linear-gradient(160deg,#3D1F0E 0%,var(--espresso) 100%)}
 .bar-vis-vault{background:linear-gradient(160deg,#110805 0%,var(--espresso) 100%)}
 .bar-vis-label{font-family:var(--ff-disp);font-size:clamp(28px,5vw,64px);font-weight:900;font-style:italic;color:rgba(240,232,213,0.07);text-align:center;letter-spacing:0.06em;padding:20px}
-
-/* Exchange rotating element */
 .exchange-visual{display:flex;align-items:center;justify-content:center;width:100%;height:100%}
 .exchange-visual svg{width:220px;height:220px}
 @keyframes exSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 @keyframes exCounter{from{transform:rotate(0deg)}to{transform:rotate(-360deg)}}
 .ex-outer-ring{transform-origin:110px 110px;animation:exSpin 28s linear infinite}
 
-/* ══════════════════════════════════════════════
-   SOCIALIZE — EVENTS
-══════════════════════════════════════════════ */
 .events-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--rule)}
 .event-card{background:var(--parchment);padding:52px 40px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
 .event-card:last-child{border-right:none}
 .event-type{font-family:var(--ff-sans);font-size:9.5px;font-weight:300;letter-spacing:0.45em;text-transform:uppercase;color:var(--amber);margin-bottom:14px;display:block;opacity:0.85}
 .event-title{font-family:var(--ff-disp);font-size:clamp(24px,3vw,36px);color:var(--tobacco);margin-bottom:14px;font-weight:700}
 .event-desc{font-family:var(--ff-body);font-size:14px;color:var(--brown);line-height:1.8}
-
 .vault-sessions{background:var(--tobacco);padding:96px 0;text-align:center}
 .vault-sessions h2{font-family:var(--ff-disp);font-size:clamp(32px,5vw,68px);font-style:italic;color:var(--parchment);font-weight:700}
 .vault-sessions p{font-family:var(--ff-body);font-size:16px;font-style:italic;color:rgba(240,232,213,0.65);max-width:520px;margin:18px auto 32px;line-height:1.8}
 .vault-sessions-detail{font-family:var(--ff-sans);font-size:9px;font-weight:300;letter-spacing:0.5em;text-transform:uppercase;color:rgba(240,232,213,0.38);margin-top:24px}
-
 .private-events{background:var(--cream);padding:88px 0}
 .private-inner{display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:start}
 .private-events h2{color:var(--tobacco)}
@@ -378,9 +320,6 @@ footer{background:var(--tobacco);padding:64px 0 32px;border-top:2px solid rgba(1
 .private-detail label{font-family:var(--ff-sans);font-size:8px;font-weight:300;letter-spacing:0.4em;color:var(--amber);text-transform:uppercase;display:block;margin-bottom:5px;opacity:0.85}
 .private-detail p{font-family:var(--ff-body);font-size:13px;color:var(--brown);margin:0;line-height:1.65}
 
-/* ══════════════════════════════════════════════
-   STORY — ABOUT
-══════════════════════════════════════════════ */
 .story-lead{background:var(--parchment);padding:88px 0}
 .story-2col{display:grid;grid-template-columns:1fr 2.2fr;gap:80px;align-items:start}
 .story-year-side{text-align:center;padding-top:8px}
@@ -389,12 +328,9 @@ footer{background:var(--tobacco);padding:64px 0 32px;border-top:2px solid rgba(1
 .story-text p{font-family:var(--ff-body);font-size:15px;color:var(--brown);line-height:2;margin-bottom:18px}
 .story-text p strong{font-weight:600;color:var(--tobacco)}
 .story-text p em{font-style:italic;color:var(--rust)}
-
 .story-pullquote{background:var(--tobacco);padding:80px 0;text-align:center}
 .story-pullquote blockquote{font-family:var(--ff-disp);font-size:clamp(20px,3.2vw,36px);font-style:italic;color:var(--parchment);max-width:740px;margin:0 auto;line-height:1.65;padding:0 40px;font-weight:400}
 .story-pullquote cite{display:block;margin-top:24px;font-family:var(--ff-sans);font-size:9px;font-weight:300;letter-spacing:0.45em;color:rgba(196,131,42,0.55);text-transform:uppercase;font-style:normal}
-
-/* Timeline */
 .timeline{background:var(--cream);padding:88px 0}
 .timeline-wrap{max-width:760px;margin:0 auto;padding:0 48px}
 .timeline-section-hdr{text-align:center;margin-bottom:60px}
@@ -409,7 +345,6 @@ footer{background:var(--tobacco);padding:64px 0 32px;border-top:2px solid rgba(1
 .tl-content{padding-bottom:56px}
 .tl-title{font-family:var(--ff-disp);font-size:22px;font-weight:700;color:var(--tobacco);margin-bottom:8px}
 .tl-text{font-family:var(--ff-body);font-size:14px;color:var(--brown);line-height:1.9}
-
 .story-positioning{background:var(--espresso);padding:88px 0;text-align:center}
 .story-positioning blockquote{font-family:var(--ff-disp);font-size:clamp(17px,2.6vw,28px);font-style:italic;color:rgba(240,232,213,0.8);max-width:760px;margin:0 auto;line-height:1.75;padding:0 40px;font-weight:400}
 .story-positioning cite{display:block;margin-top:22px;font-family:var(--ff-sans);font-size:9px;font-weight:300;letter-spacing:0.45em;color:rgba(196,131,42,0.5);text-transform:uppercase;font-style:normal}
@@ -425,9 +360,9 @@ footer{background:var(--tobacco);padding:64px 0 32px;border-top:2px solid rgba(1
 }
 @media(max-width:768px){
   #nav{padding:0 24px}
-  .nav-center,.nav-story{display:none}
   .nav-ham{display:flex}
   .nav-right{justify-content:flex-end}
+  .mobile-menu{right:24px}
   .wrap,.wrap-narrow{padding:0 24px}
   .chefs-grid{grid-template-columns:1fr}
   .bars-grid{grid-template-columns:1fr}
@@ -456,7 +391,6 @@ footer{background:var(--tobacco);padding:64px 0 32px;border-top:2px solid rgba(1
       <span class="nav-wm-sub">Key West · Est. 1962</span>
     </div>
   </a>
-
   <div class="nav-center">
     <a onclick="showPage('sip')" id="nav-sip">Sip</a>
     <span class="nav-sep">·</span>
@@ -464,7 +398,6 @@ footer{background:var(--tobacco);padding:64px 0 32px;border-top:2px solid rgba(1
     <span class="nav-sep">·</span>
     <a onclick="showPage('socialize')" id="nav-socialize">Socialize</a>
   </div>
-
   <div class="nav-right">
     <a class="nav-story" onclick="showPage('story')" id="nav-story">Our Story</a>
     <div class="nav-ham" onclick="toggleMobile()">
@@ -475,10 +408,11 @@ footer{background:var(--tobacco);padding:64px 0 32px;border-top:2px solid rgba(1
 
 <div class="mobile-menu" id="mobileMenu">
   <a onclick="showPage('home');toggleMobile()">Home</a>
-  <a onclick="showPage('sip');toggleMobile()">Sip — The Bars</a>
-  <a onclick="showPage('savor');toggleMobile()">Savor — The Kitchens</a>
-  <a onclick="showPage('socialize');toggleMobile()">Socialize — Events</a>
-  <a onclick="showPage('story');toggleMobile()">Our Story</a>
+  <a onclick="showPage('savor');toggleMobile()">Menus</a>
+  <a onclick="showPage('socialize');toggleMobile()">Events</a>
+  <a onclick="showPage('story');toggleMobile()">About</a>
+  <a href="#">FAQ</a>
+  <a href="#">Careers</a>
 </div>
 
 
@@ -487,57 +421,39 @@ footer{background:var(--tobacco);padding:64px 0 32px;border-top:2px solid rgba(1
 ═══════════════════════════════════════════════════════ -->
 <div class="page active" id="page-home">
 
-  <!-- HERO -->
   <section class="hero">
     <div class="hero-yr-bg">1962</div>
-
-    <!-- LOGO -->
     <div class="hero-ring-wrap">
       <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <!-- Arc path for text — radius 84, starts at 9-o'clock, runs clockwise -->
           <path id="ringarc" d="M 100,100 m -84,0 a 84,84 0 1,1 168,0 a 84,84 0 1,1 -168,0"/>
         </defs>
-
-        <!-- Static outer ring circles — never move -->
         <circle cx="100" cy="100" r="97" fill="none" stroke="rgba(196,131,42,0.16)" stroke-width="0.6"/>
         <circle cx="100" cy="100" r="62" fill="none" stroke="rgba(240,232,213,0.07)" stroke-width="0.5"/>
-
-        <!-- SPINNING GROUP: text + 🗝 key, one unit -->
         <g class="ring-spin">
-
-          <!-- Ring text on arc -->
-          <text font-family="'Jost',sans-serif" font-size="7.2" font-weight="300"
-                letter-spacing="4.2" fill="rgba(240,232,213,0.62)">
+          <text font-family="'Jost',sans-serif" font-size="7.2" font-weight="300" letter-spacing="4.2" fill="rgba(240,232,213,0.62)">
             <textPath href="#ringarc" startOffset="0%">SIP · SAVOR · SOCIALIZE ·  <tspan font-size="20" baseline-shift="-3">🗝</tspan>  · A CULINARY LANDMARK · EST. 1962 ·  <tspan font-size="20" baseline-shift="-3">🗝</tspan>  ·</textPath>
           </text>
-
         </g>
       </svg>
-
-      <!-- Static center — sits on top, never rotates -->
       <div class="hero-center">
         <span class="hero-center-the">The</span>
         <span class="hero-center-name">Reserve</span>
         <span class="hero-center-sub">Key West</span>
       </div>
     </div>
-
     <p class="hero-eyebrow">A Culinary Landmark · Est. 1962</p>
     <h1 class="hero-title"><span class="hero-title-plain">The</span> Reserve</h1>
     <h2 class="hero-sub">Key West</h2>
     <div class="hero-vline"></div>
     <p class="hero-tagline">Four Celebrated Chefs. One 1962 Landmark.</p>
     <p class="hero-guest">No Reservations Required.</p>
-
     <div class="hero-scroll">
       <span>Discover</span>
       <div class="hero-scroll-line"></div>
     </div>
   </section>
 
-  <!-- THREE DOORS — PRIMARY NAVIGATION -->
-  <!-- SIP · SAVOR · SOCIALIZE — THREE DOORS -->
   <div class="nav-cards">
     <a class="nav-card" data-num="Sip" onclick="showPage('sip')">
       <span class="nav-card-label">Bar Program</span>
@@ -575,161 +491,7 @@ footer{background:var(--tobacco);padding:64px 0 32px;border-top:2px solid rgba(1
     </a>
   </div>
 
-  <!-- MARQUEE -->
-  <div class="marquee">
-    <div class="marquee-track">
-      <span class="marquee-item">Thai Island</span>
-      <span class="marquee-item">MisoHappy</span>
-      <span class="marquee-item">OnlyWood</span>
-      <span class="marquee-item">Little Pearl</span>
-      <span class="marquee-item">Bocado</span>
-      <span class="marquee-item">The Exchange</span>
-      <span class="marquee-item">The Ledger</span>
-      <span class="marquee-item">The Vault</span>
-      <span class="marquee-item">Live Music</span>
-      <span class="marquee-item">510 Southard St</span>
-      <span class="marquee-item">Thai Island</span>
-      <span class="marquee-item">MisoHappy</span>
-      <span class="marquee-item">OnlyWood</span>
-      <span class="marquee-item">Little Pearl</span>
-      <span class="marquee-item">Bocado</span>
-      <span class="marquee-item">The Exchange</span>
-      <span class="marquee-item">The Ledger</span>
-      <span class="marquee-item">The Vault</span>
-      <span class="marquee-item">Live Music</span>
-      <span class="marquee-item">510 Southard St</span>
-    </div>
-  </div>
 
-  <!-- PHILOSOPHY -->
-  <div class="philosophy">
-    <div class="wrap">
-      <blockquote>
-        "The Reserve Key West is where Key West's most celebrated chefs come home."
-        <cite>The Reserve Key West · 510 Southard Street · Est. First Federal, 1962</cite>
-      </blockquote>
-    </div>
-  </div>
-
-  <!-- CHEFS PREVIEW -->
-  <section class="chefs-section sec">
-    <div class="wrap">
-      <div class="sec-hdr">
-        <span class="kicker">Savor — Four Kitchens</span>
-        <h2>The Heart of<br>Everything</h2>
-        <p>The chefs are the reason the curtain rises. The building is the stage. The history is the story.</p>
-        <div class="amber-rule"></div>
-      </div>
-    </div>
-    <div class="chefs-grid">
-      <div class="chef-card" onclick="showPage('savor')">
-        <div class="chef-card-bar"></div>
-        <span class="chef-card-num">Kitchen 01</span>
-        <h3 class="chef-card-name">Thai Island<br>/ MisoHappy</h3>
-        <span class="chef-card-cuisine">Sushi · Thai · Good Spirits</span>
-        <p class="chef-card-desc">A Key West institution since 2008. The chef grows her own Thai herbs on the island — lemongrass, basil, papaya — so she can cook the way she learned to cook at home.</p>
-        <span class="chef-card-cta">Explore the Kitchen →</span>
-      </div>
-      <div class="chef-card" onclick="showPage('savor')">
-        <div class="chef-card-bar"></div>
-        <span class="chef-card-num">Kitchen 02</span>
-        <h3 class="chef-card-name">OnlyWood</h3>
-        <span class="chef-card-cuisine">Neapolitan Pizza · Trattoria</span>
-        <p class="chef-card-desc">A Vesuvius volcanic stone oven. House-made mozzarella. Imported Italian ingredients. The kitchen does not exist to approximate Italian food — it exists to honor it.</p>
-        <span class="chef-card-cta">Explore the Kitchen →</span>
-      </div>
-      <div class="chef-card" onclick="showPage('savor')">
-        <div class="chef-card-bar"></div>
-        <span class="chef-card-num">Kitchen 03</span>
-        <h3 class="chef-card-name">Little Pearl</h3>
-        <span class="chef-card-cuisine">Chef's Tasting Menu · Seafood</span>
-        <p class="chef-card-desc">A tasting menu only. Seven nights a week. Three seatings. No substitutions. No dumbing down. The most lauded dining experience in the Florida Keys.</p>
-        <span class="chef-card-cta">Explore the Kitchen →</span>
-      </div>
-      <div class="chef-card" onclick="showPage('savor')">
-        <div class="chef-card-bar"></div>
-        <span class="chef-card-num">Kitchen 04</span>
-        <h3 class="chef-card-name">Bocado</h3>
-        <span class="chef-card-cuisine">Authentic Spanish Tapas</span>
-        <p class="chef-card-desc">The most significant story of the four: Bocado did not exist before The Reserve. This concept was created expressly for this space, this building, this community.</p>
-        <span class="born-here">🗝 Born at The Reserve</span>
-        <span class="chef-card-cta">Explore the Kitchen →</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- BUILDING STRIP -->
-  <section class="building">
-    <div class="wrap">
-      <div class="building-inner">
-        <div class="building-yr-block">
-          <div class="building-yr-num">1962</div>
-          <div class="building-yr-label">First Federal · Reborn 2026</div>
-        </div>
-        <div class="building-text">
-          <span class="kicker">The Building</span>
-          <h2>A 1962 bank lobby.<br><em>The most beautiful room<br>in Key West.</em></h2>
-          <div class="amber-rule-left" style="opacity:0.25;margin:24px 0"></div>
-          <p>The sculptural wave ceiling. The original mosaic mural in turquoise, aqua, and cobalt. The vault door sealed since Eisenhower. First Federal Savings & Loan was where Key West families got their mortgages, where fishermen banked their season. It was built for the people who lived here — before the tourists, before the fame.</p>
-          <p>The building that held financial reserves now holds something harder to measure: the culinary reserve of the Florida Keys.</p>
-          <a class="building-cta" onclick="showPage('story')">Read the Full Story →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BARS PREVIEW -->
-  <section class="bars-section">
-    <div class="wrap">
-      <div class="sec-hdr">
-        <span class="kicker">Sip — Three Bars</span>
-        <h2>Banking Heritage,<br>Understated</h2>
-        <p>These names work on two levels. A guest who doesn't know the history will find them elegant. A guest who does will appreciate the tribute.</p>
-        <div class="amber-rule"></div>
-      </div>
-    </div>
-    <div class="bars-grid">
-      <div class="bar-card" onclick="showPage('sip')">
-        <div class="bar-card-n">01</div>
-        <h3 class="bar-card-name">The Exchange</h3>
-        <span class="bar-card-type">The Rotating Bar</span>
-        <p class="bar-card-desc">The theatrical centerpiece of The Reserve — a motorized circular bar that rotates slowly through the room. 16 to 20 seats. The most photographed feature in the building.</p>
-        <div class="bar-card-rule"></div>
-        <span class="bar-card-bank">The exchange rate · The trading floor</span>
-      </div>
-      <div class="bar-card" onclick="showPage('sip')">
-        <div class="bar-card-n">02</div>
-        <h3 class="bar-card-name">The Ledger</h3>
-        <span class="bar-card-type">The Main Floor Bar</span>
-        <p class="bar-card-desc">The workhorse. The anchor. The primary service bar for the main floor, adjacent to the mural wall. This is where the evening finds its rhythm.</p>
-        <div class="bar-card-rule"></div>
-        <span class="bar-card-bank">The bank's book of accounts</span>
-      </div>
-      <div class="bar-card" onclick="showPage('sip')">
-        <div class="bar-card-n">03</div>
-        <h3 class="bar-card-name">The Vault</h3>
-        <span class="bar-card-type">The Speakeasy</span>
-        <p class="bar-card-desc">Push the original 1962 vault door. Step inside. Craft cocktails only. 20 seats. When it's full, it's full. The darkest, quietest, most intimate room in the Florida Keys.</p>
-        <div class="bar-card-rule"></div>
-        <span class="bar-card-bank">The literal 1962 bank vault</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- VAULT TEASER -->
-  <div class="vault-tease">
-    <div class="vault-tease-bg-key">🗝</div>
-    <div class="vault-tease-inner">
-      <span class="kicker">The Vault Speakeasy</span>
-      <h2 class="vault-tease-title">The Vault</h2>
-      <div class="vault-tease-rule"></div>
-      <p class="vault-tease-desc">Behind the original 1962 vault door sits the most intimate cocktail lounge in the Florida Keys. Craft cocktails only. No food. No reservations needed.</p>
-      <p class="vault-tease-detail">20 Seats · Candlelight Only · When It's Full, It's Full</p>
-      <a class="vault-btn" onclick="showPage('sip')">Enter The Vault</a>
-    </div>
-  </div>
-
-  <!-- FOOTER -->
   <footer>
     <div class="wrap">
       <div class="footer-grid">
@@ -778,7 +540,7 @@ footer{background:var(--tobacco);padding:64px 0 32px;border-top:2px solid rgba(1
         </div>
       </div>
       <div class="footer-bottom">
-        <span class="footer-copy">© 2026 The Reserve Key West LLC · All Rights Reserved · v4.5.3</span>
+        <span class="footer-copy">© 2026 The Reserve Key West LLC · All Rights Reserved · v4.5.4</span>
         <span class="footer-legal">Est. First Federal, 1962 · 510 Southard St · Key West, FL</span>
       </div>
     </div>
@@ -807,96 +569,35 @@ footer{background:var(--tobacco);padding:64px 0 32px;border-top:2px solid rgba(1
     </div>
   </div>
 
-  <!-- Kitchen 01 -->
-  <div class="kitchen-profile">
-    <div class="wrap">
-      <div class="kitchen-inner">
-        <div class="kitchen-content">
-          <div class="kitchen-num">01</div>
-          <h2 class="kitchen-name">Thai Island<br>/ MisoHappy</h2>
-          <span class="kitchen-tag">Sushi · Regional Thai · Good Spirits · Pan-Asian</span>
-          <p class="kitchen-story">A Key West institution since 2008, Thai Island began at Garrison Bight Marina before evolving into <strong>MisoHappy at 504 Southard</strong> — practically next door to The Reserve. What defines this kitchen is not just the food but the philosophy behind it.</p>
-          <p class="kitchen-story">The chef grows her own Thai herbs and spices on the island. Lemongrass. Basil. Papaya. Ingredients that most restaurants import from a supplier, she grows herself, on a tropical island, for the guests she serves. <strong>This is not Thai food from a box.</strong> This is an immigrant chef who planted a garden so she could cook the way she learned to cook at home.</p>
-          <div class="kitchen-sig">
-            <span class="kitchen-sig-lbl">Signature</span>
-            <p class="kitchen-sig-text">Fresh herbs grown on-island by the chef · Sushi, Regional Thai & Pan-Asian · Chef name to be confirmed by ownership</p>
-          </div>
-        </div>
-        <div class="kitchen-vis">
-          <div class="kitchen-vis-text">Thai Island<br>/ MisoHappy</div>
-          <div class="kitchen-vis-sub">Sushi · Thai · Good Spirits</div>
-        </div>
-      </div>
+  <div class="kitchen-cols">
+    <div class="kitchen-col">
+      <span class="kitchen-col-num">Kitchen 01</span>
+      <h3 class="kitchen-col-name">Thai Island<br>/ MisoHappy</h3>
+      <span class="kitchen-col-tag">Sushi · Thai · Good Spirits</span>
+      <p class="kitchen-col-desc">A Key West institution since 2008. The chef grows her own Thai herbs on the island — lemongrass, basil, papaya — so she can cook the way she learned to cook at home.</p>
+      <a class="kitchen-col-cta" onclick="showPage('savor')">Explore the Kitchen →</a>
     </div>
-  </div>
-
-  <!-- Kitchen 02 -->
-  <div class="kitchen-profile">
-    <div class="wrap">
-      <div class="kitchen-inner">
-        <div class="kitchen-content">
-          <div class="kitchen-num">02</div>
-          <h2 class="kitchen-name">OnlyWood</h2>
-          <span class="kitchen-tag">Neapolitan Pizza · Traditional Trattoria · Family Owned Since 2012</span>
-          <p class="kitchen-story">Family owned and operated on Duval Street since 2012, OnlyWood is one of the most authentically Italian restaurants in the Florida Keys. The story begins with an act of obsession: the owners imported a <strong>massive brick oven built entirely from volcanic materials sourced from Mount Vesuvius in Naples</strong> — capable of reaching 1,000 degrees, the temperature required for authentic Neapolitan-style pizza.</p>
-          <p class="kitchen-story">They make their own mozzarella following an ancient recipe. Their '00' flour and San Marzano tomatoes are imported directly from Italy. Homemade gnocchi, fresh fettuccine, hand-rolled lasagna. <strong>The kitchen does not exist to approximate Italian food — it exists to honor it.</strong></p>
-          <div class="kitchen-sig">
-            <span class="kitchen-sig-lbl">Signature</span>
-            <p class="kitchen-sig-text">Vesuvius volcanic stone oven · House-made mozzarella · Imported Italian ingredients · Chef/owner name to be confirmed</p>
-          </div>
-        </div>
-        <div class="kitchen-vis">
-          <div class="kitchen-vis-text">OnlyWood</div>
-          <div class="kitchen-vis-sub">Neapolitan Pizza · Trattoria</div>
-        </div>
-      </div>
+    <div class="kitchen-col">
+      <span class="kitchen-col-num">Kitchen 02</span>
+      <h3 class="kitchen-col-name">OnlyWood</h3>
+      <span class="kitchen-col-tag">Neapolitan Pizza · Trattoria</span>
+      <p class="kitchen-col-desc">A Vesuvius volcanic stone oven. House-made mozzarella. Imported Italian ingredients. The kitchen does not exist to approximate Italian food — it exists to honor it.</p>
+      <a class="kitchen-col-cta" onclick="showPage('savor')">Explore the Kitchen →</a>
     </div>
-  </div>
-
-  <!-- Kitchen 03 -->
-  <div class="kitchen-profile">
-    <div class="wrap">
-      <div class="kitchen-inner">
-        <div class="kitchen-content">
-          <div class="kitchen-num">03</div>
-          <h2 class="kitchen-name">Little Pearl</h2>
-          <span class="kitchen-tag">Chef's Tasting Menu · Local Seafood · Wine Bar · Seven Nights</span>
-          <p class="kitchen-story">The crown jewel of the four in terms of prestige and narrative. Little Pearl is the creation of restaurateurs whose combined portfolio — including Italian mainstay <strong>Antonia's</strong> (celebrating over 25 seasons) and seafood destination <strong>Thirsty Mermaid</strong> — represents more than two decades of building Key West's serious dining culture, one dish at a time.</p>
-          <p class="kitchen-story">Little Pearl operates on pure chef's conviction: <strong>a tasting menu only, seven nights a week, three seatings. No substitutions. No dumbing down.</strong> The restaurant even produces its own wine — the Lange Little Pearl Cuvée Pinot Noir from Oregon's Willamette Valley — in direct collaboration with the kitchen. That is the level of intentionality at work here.</p>
-          <div class="kitchen-sig">
-            <span class="kitchen-sig-lbl">Signature</span>
-            <p class="kitchen-sig-text">Four-course Chef's Tasting Menu only · Lange Little Pearl Cuvée wine · Three nightly seatings: 5pm, 7pm, 9pm · Chef/owner name to be confirmed</p>
-          </div>
-        </div>
-        <div class="kitchen-vis">
-          <div class="kitchen-vis-text">Little Pearl</div>
-          <div class="kitchen-vis-sub">Chef's Tasting · Local Seafood</div>
-        </div>
-      </div>
+    <div class="kitchen-col">
+      <span class="kitchen-col-num">Kitchen 03</span>
+      <h3 class="kitchen-col-name">Little Pearl</h3>
+      <span class="kitchen-col-tag">Chef's Tasting Menu · Seafood</span>
+      <p class="kitchen-col-desc">A tasting menu only. Seven nights a week. Three seatings. No substitutions. No dumbing down. The most lauded dining experience in the Florida Keys.</p>
+      <a class="kitchen-col-cta" onclick="showPage('savor')">Explore the Kitchen →</a>
     </div>
-  </div>
-
-  <!-- Kitchen 04: Bocado -->
-  <div class="kitchen-profile">
-    <div class="wrap">
-      <div class="kitchen-inner">
-        <div class="kitchen-content">
-          <div class="bocado-flag"><span>🗝 Born at The Reserve Key West</span></div>
-          <div class="kitchen-num">04</div>
-          <h2 class="kitchen-name">Bocado</h2>
-          <span class="kitchen-tag">Authentic Spanish Tapas · Created Expressly for This Space</span>
-          <p class="kitchen-story">Bocado is the most significant story of all four kitchens — <strong>because it did not exist before The Reserve Key West.</strong> The concept was created expressly for this space. A chef believed in this building, this vision, and this community enough to originate something entirely new.</p>
-          <p class="kitchen-story">Bocado is not a tenant. It is a creation. <strong>The Reserve Key West is its birthplace.</strong> This distinction is worth celebrating: one of our four kitchens exists because of this building. That is a rare and powerful thing to say — and it is true.</p>
-          <div class="kitchen-sig">
-            <span class="kitchen-sig-lbl">Signature</span>
-            <p class="kitchen-sig-text">Authentic Spanish Tapas · Born at The Reserve Key West, 2026 · Chef/owner name to be confirmed</p>
-          </div>
-        </div>
-        <div class="kitchen-vis">
-          <div class="kitchen-vis-text">Bocado</div>
-          <div class="kitchen-vis-sub">Spanish Tapas · Born Here</div>
-        </div>
-      </div>
+    <div class="kitchen-col">
+      <span class="kitchen-col-num">Kitchen 04</span>
+      <h3 class="kitchen-col-name">Bocado</h3>
+      <span class="kitchen-col-tag">Authentic Spanish Tapas</span>
+      <p class="kitchen-col-desc">The most significant story of the four: Bocado did not exist before The Reserve. This concept was created expressly for this space, this building, this community.</p>
+      <span class="kitchen-col-born">🗝 Born at The Reserve</span>
+      <a class="kitchen-col-cta" onclick="showPage('savor')">Explore the Kitchen →</a>
     </div>
   </div>
 
@@ -937,7 +638,7 @@ footer{background:var(--tobacco);padding:64px 0 32px;border-top:2px solid rgba(1
         </div>
       </div>
       <div class="footer-bottom">
-        <span class="footer-copy">© 2026 The Reserve Key West LLC · All Rights Reserved · v4.5.3</span>
+        <span class="footer-copy">© 2026 The Reserve Key West LLC · All Rights Reserved · v4.5.4</span>
         <span class="footer-legal">Est. First Federal, 1962 · 510 Southard St · Key West, FL</span>
       </div>
     </div>
@@ -959,7 +660,6 @@ footer{background:var(--tobacco);padding:64px 0 32px;border-top:2px solid rgba(1
     </div>
   </div>
 
-  <!-- Bar 01: The Exchange -->
   <div class="bar-section bar-section-exchange">
     <div class="wrap">
       <div class="bar-inner">
@@ -999,7 +699,6 @@ footer{background:var(--tobacco);padding:64px 0 32px;border-top:2px solid rgba(1
     </div>
   </div>
 
-  <!-- Bar 02: The Ledger -->
   <div class="bar-section bar-section-ledger bar-ledger">
     <div class="wrap">
       <div class="bar-inner">
@@ -1024,7 +723,6 @@ footer{background:var(--tobacco);padding:64px 0 32px;border-top:2px solid rgba(1
     </div>
   </div>
 
-  <!-- Bar 03: The Vault -->
   <div class="bar-section bar-section-vault">
     <div class="wrap">
       <div class="bar-inner">
@@ -1086,7 +784,7 @@ footer{background:var(--tobacco);padding:64px 0 32px;border-top:2px solid rgba(1
         </div>
       </div>
       <div class="footer-bottom">
-        <span class="footer-copy">© 2026 The Reserve Key West LLC · All Rights Reserved · v4.5.3</span>
+        <span class="footer-copy">© 2026 The Reserve Key West LLC · All Rights Reserved · v4.5.4</span>
         <span class="footer-legal">Est. First Federal, 1962 · 510 Southard St · Key West, FL</span>
       </div>
     </div>
@@ -1213,7 +911,7 @@ footer{background:var(--tobacco);padding:64px 0 32px;border-top:2px solid rgba(1
         </div>
       </div>
       <div class="footer-bottom">
-        <span class="footer-copy">© 2026 The Reserve Key West LLC · All Rights Reserved · v4.5.3</span>
+        <span class="footer-copy">© 2026 The Reserve Key West LLC · All Rights Reserved · v4.5.4</span>
         <span class="footer-legal">Est. First Federal, 1962 · 510 Southard St · Key West, FL</span>
       </div>
     </div>
@@ -1288,7 +986,6 @@ footer{background:var(--tobacco);padding:64px 0 32px;border-top:2px solid rgba(1
         <h2>A Building with Memory</h2>
         <div class="amber-rule"></div>
       </div>
-
       <div class="tl-item">
         <div class="tl-year"><span>1962</span></div>
         <div class="tl-dot-col"><div class="tl-dot"></div></div>
@@ -1297,7 +994,6 @@ footer{background:var(--tobacco);padding:64px 0 32px;border-top:2px solid rgba(1
           <p class="tl-text">First Federal Savings & Loan opens at 510 Southard Street. The building is completed — mid-century modernism at its most confident. The sculptural wave ceiling is poured. The vault door is installed and sealed. One of the most architecturally significant interiors in the Florida Keys.</p>
         </div>
       </div>
-
       <div class="tl-item">
         <div class="tl-year"><span>The Mural</span></div>
         <div class="tl-dot-col"><div class="tl-dot"></div></div>
@@ -1306,7 +1002,6 @@ footer{background:var(--tobacco);padding:64px 0 32px;border-top:2px solid rgba(1
           <p class="tl-text">The original mosaic mural depicts Key West history in turquoise, aqua, and cobalt. It is the color DNA of the entire venue — every design decision flows from its palette. The mural was never moved. It never needed to be.</p>
         </div>
       </div>
-
       <div class="tl-item">
         <div class="tl-year"><span>2026</span></div>
         <div class="tl-dot-col"><div class="tl-dot"></div></div>
@@ -1364,7 +1059,7 @@ footer{background:var(--tobacco);padding:64px 0 32px;border-top:2px solid rgba(1
         </div>
       </div>
       <div class="footer-bottom">
-        <span class="footer-copy">© 2026 The Reserve Key West LLC · All Rights Reserved · v4.5.3</span>
+        <span class="footer-copy">© 2026 The Reserve Key West LLC · All Rights Reserved · v4.5.4</span>
         <span class="footer-legal">Est. First Federal, 1962 · 510 Southard St · Key West, FL</span>
       </div>
     </div>
@@ -1372,7 +1067,6 @@ footer{background:var(--tobacco);padding:64px 0 32px;border-top:2px solid rgba(1
 </div><!-- /page-story -->
 
 
-<!-- SCRIPT -->
 <script>
 function showPage(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
